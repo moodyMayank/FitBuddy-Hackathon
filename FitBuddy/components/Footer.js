@@ -12,19 +12,10 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-const Footer = () => {
+const Footer = (navigation) => {
   const [selected, setSelected] = React.useState(1);
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      justify="space-between"
-
-      //   bg="white"
-      //   safeAreaTop
-      //   width="100%"
-      //   maxW="300px"
-    >
+    <Box display="flex" flexDirection="column" justify="flex-end">
       <HStack bg="indigo.600" alignItems="center" safeAreaBottom shadow={6}>
         <Pressable flex={1}>
           <Center>
@@ -52,7 +43,7 @@ const Footer = () => {
               name="search"
             />
             <Text color="white" fontSize="12">
-              Search
+              Bookings
             </Text>
           </Center>
         </Pressable>
