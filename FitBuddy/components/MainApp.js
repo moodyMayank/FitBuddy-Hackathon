@@ -11,13 +11,24 @@ import {
 import Card from "./Card";
 import dummyCentres from "../assets/Dummy_Data/Dummy_Centres";
 import SearchBar from "./SearchBar";
+import Footer from "./Footer";
 
 const MainApp = () => {
   return (
-    <View>
+    <>
       <SearchBar />
-      <Text>Inside of MainApp</Text>
-    </View>
+      {/* <Footer /> */}
+      <ScrollView>
+        {dummyCentres.map((Option) => (
+          <Card
+            image={Option.image}
+            name={Option.name}
+            price={Option.price}
+            area={Option.area}
+          />
+        ))}
+      </ScrollView>
+    </>
   );
 };
 
@@ -37,14 +48,7 @@ export default MainApp;
 //     <ScrollView>
 //       <Text>asdf</Text>
 // {/*
-//       {dummyCentres.map((Option) => (
-//         <Card
-//           image={Option.image}
-//           name={Option.name}
-//           price={Option.price}
-//           area={Option.area}
-//         />
-//       ))} */}
+//
 //       {/* </Center> */}
 //     </ScrollView>
 //   </Center>

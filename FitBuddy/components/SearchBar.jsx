@@ -25,7 +25,6 @@ const SearchBar = () => {
       divider={<Box px="2">{/* <Divider /> */}</Box>}
     >
       <VStack w="100%" space={5} alignSelf="center">
-        <Heading fontSize="lg">Material</Heading>
         <Input
           placeholder="Search People & Places"
           width="100%"

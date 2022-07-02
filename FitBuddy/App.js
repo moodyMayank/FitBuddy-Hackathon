@@ -26,9 +26,8 @@ export const theme = extendTheme({ config });
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Text>Hello asdf</Text>
       {/* <ToggleDarkMode />  */}
-      <MainApp/>
+      <MainApp />
     </NativeBaseProvider>
   );
 }
