@@ -10,27 +10,11 @@ import {
   extendTheme,
 } from "native-base";
 import MainApp from "./components/MainApp";
-import Cart from "./components/Cart";
+import Cart from "./components/Screens/Cart";
+import Booking from "./components/Booking";
+import BottomTabNavigator from "./components/BottomTabNavigator";
+import DynamicScreen from "./components/Screens/DynamicScreen";
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate("Details")}
-      />
-    </View>
-  );
-}
-
-function DetailsScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Details Screen</Text>
-    </View>
-  );
-}
 // Define the config
 const config = {
   useSystemColorMode: false,
@@ -47,8 +31,12 @@ export default function App() {
       <NativeBaseProvider>
         {/* <ToggleDarkMode />  */}
         <Stack.Navigator>
-          <Stack.Screen name="MainApp" component={MainApp} />
-          <Stack.Screen name="Cart" component={Cart} />
+          <Stack.Screen
+            name="BottomTabNavigator"
+            component={BottomTabNavigator}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen name="DynamicScreen" component={DynamicScreen} />
         </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>
