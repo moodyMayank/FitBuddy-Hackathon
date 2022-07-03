@@ -53,7 +53,7 @@ const Card = (props) => {
               }}
               fontWeight="400"
             >
-              ${props.price}
+              Rs: {props.price}/hr
             </Text>
             <Text
               color="coolGray.600"
