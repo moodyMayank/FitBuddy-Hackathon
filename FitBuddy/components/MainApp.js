@@ -18,7 +18,9 @@ const MainApp = ({ navigation }) => {
           m="2"
         >
           {dummyCentres.map((Option) => (
-            <Pressable onPress={() => navigation.navigate("DynamicScreen")}>
+            <Pressable
+              onPress={() => navigation.navigate("DynamicScreen", Option)}
+            >
               <Card
                 image={Option.image}
                 name={Option.name}
