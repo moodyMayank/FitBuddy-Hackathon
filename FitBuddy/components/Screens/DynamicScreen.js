@@ -19,9 +19,7 @@ export default function DynamicScreen({ navigation, route }) {
     <Box
       display="flex"
       flexDirection="column"
-      align="flex-end"
       bg="white"
-      safeAreaTop
       width="100%"
       alignSelf="center"
     >
@@ -36,26 +34,28 @@ export default function DynamicScreen({ navigation, route }) {
         </AspectRatio>
         <Heading>{route.params.name}</Heading>
         <Text>{route.params.description}</Text>
-        <Heading>{route.params.price}</Heading>
-        <IconButton
-          icon={<Icon as={AntDesign} name="minuscircleo" />}
-          onPress={() => setHours(hours - 1)}
-          borderRadius="full"
-          _icon={{
-            color: "orange.500",
-            size: "md",
-          }}
-        />
-        <Text justify="center">{hours}</Text>
-        <IconButton
-          icon={<Icon as={AntDesign} name="pluscircleo" />}
-          onPress={() => setHours(hours + 1)}
-          borderRadius="full"
-          _icon={{
-            color: "orange.500",
-            size: "md",
-          }}
-        />
+        <Heading>Price : {route.params.price}/hr</Heading>
+        <Box display="flex" flexDirection="row" justifyItems="center">
+          <IconButton
+            icon={<Icon as={AntDesign} name="minuscircleo" />}
+            onPress={() => setHours(hours - 1)}
+            borderRadius="full"
+            _icon={{
+              color: "orange.500",
+              size: "md",
+            }}
+          />
+          <Text>{hours}</Text>
+          <IconButton
+            icon={<Icon as={AntDesign} name="pluscircleo" />}
+            onPress={() => setHours(hours + 1)}
+            borderRadius="full"
+            _icon={{
+              color: "orange.500",
+              size: "md",
+            }}
+          />
+        </Box>
         <Button
           onPress={() => {
             navigation.navigate("Cart", route.params);
